@@ -1,0 +1,83 @@
+HTML
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Mis XV Años - Rosalinda Pacherres Bernal</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    :root {
+      --color-primary: #9b001d;       /* Carmesí real */
+      --color-primary-dark: #4a000d;  /* Borgoña oscuro */
+      --color-gold: #d4af37;          /* Oro imperial */
+      --color-gold-light: #fbeea4;    /* Resplandor dorado */
+      --color-celeste: #5ec7f8;       /* Celeste reservado */
+      --color-dark: #0d090a;          /* Fondo casi negro */
+      --color-card-bg: rgba(22, 16, 18, 0.92);
+      --font-title: 'Cinzel Decorative', serif;
+      --font-sub: 'Cinzel', serif;
+      --font-body: 'Montserrat', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--color-dark);
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(155, 0, 29, 0.4) 0%, transparent 65%),
+        radial-gradient(circle at 10% 85%, rgba(212, 175, 55, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 90% 75%, rgba(155, 0, 29, 0.25) 0%, transparent 50%);
+      color: #f7f7f7;
+      font-family: var(--font-body);
+      line-height: 1.6;
+      text-align: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ====================================================
+       PORTADA 3D - LIBRO DE CUENTOS
+       ==================================================== */
+    .book-overlay {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at center, #1c1013 0%, #080405 100%);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1800px;
+      transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+      padding: 1rem;
+    }
+
+    .book-overlay.opened {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .book-cover {
+      width: 90%;
+      max-width: 400px;
+      height: 570px;
+      background: linear-gradient(135deg, #700014, #360009);
+      border-radius: 12px
